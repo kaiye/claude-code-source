@@ -1,9 +1,9 @@
 # 2026-03-31 Request Minimization And Routing
 
 ## 请求主链路
-- `src/query.ts` -> `deps.callModel`
-- `src/query/deps.ts` -> `queryModelWithStreaming`
-- `src/services/api/claude.ts` 组装请求体并调用 `anthropic.beta.messages.create(..., stream: true)`
+- [`src/query.ts`](../recovered/claude-code-original/src/query.ts) -> `deps.callModel`
+- [`src/query/deps.ts`](../recovered/claude-code-original/src/query/deps.ts) -> `queryModelWithStreaming`
+- [`src/services/api/claude.ts`](../recovered/claude-code-original/src/services/api/claude.ts) 组装请求体并调用 `anthropic.beta.messages.create(..., stream: true)`
 
 核心结论：
 - 请求体大小主要由 `system + messages + tools + thinking` 决定。
@@ -31,6 +31,12 @@ claude(){ CLAUDE_CODE_SIMPLE=1 CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=0 CLAUDE_COD
 ## 关于 `opusplan` 与 `/btw`
 - `opusplan` 不是复杂度路由，只是 plan 模式倾向 Opus，其他模式走 Sonnet。
 - `/btw` 本身是 forked LLM 请求，不适合做“零成本旁路分类”。
+
+### 参考源码
+- [`src/utils/model/model.ts`](../recovered/claude-code-original/src/utils/model/model.ts)
+- [`src/utils/model/modelOptions.ts`](../recovered/claude-code-original/src/utils/model/modelOptions.ts)
+- [`src/commands/btw/btw.tsx`](../recovered/claude-code-original/src/commands/btw/btw.tsx)
+- [`src/utils/sideQuestion.ts`](../recovered/claude-code-original/src/utils/sideQuestion.ts)
 
 ## 推荐端云协同路由
 1. 先用本地/自定义模型做复杂度评分。

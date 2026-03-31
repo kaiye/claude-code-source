@@ -1,7 +1,7 @@
 # 2026-03-31 System Prompt Analysis (CN)
 
 ## 主文件
-- `recovered/claude-code-original/src/constants/prompts.ts`
+- [`recovered/claude-code-original/src/constants/prompts.ts`](../recovered/claude-code-original/src/constants/prompts.ts)
 - 入口函数：`getSystemPrompt()`
 
 该提示词是“多 section 拼装”，不是单个静态字符串。
@@ -35,6 +35,6 @@
 默认子代理提示词常量：`DEFAULT_AGENT_PROMPT`（同文件）。
 
 ## 相关文件
-- `recovered/claude-code-original/src/constants/cyberRiskInstruction.ts`
-- `recovered/claude-code-original/src/utils/systemPrompt.ts`
-- `recovered/claude-code-original/src/query.ts`
+- [`recovered/claude-code-original/src/constants/cyberRiskInstruction.ts`](../recovered/claude-code-original/src/constants/cyberRiskInstruction.ts)
+- [`recovered/claude-code-original/src/utils/systemPrompt.ts`](../recovered/claude-code-original/src/utils/systemPrompt.ts)
+- [`recovered/claude-code-original/src/query.ts`](../recovered/claude-code-original/src/query.ts)
